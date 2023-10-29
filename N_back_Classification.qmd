@@ -14,6 +14,9 @@ The first 10 observations on all columns are given as:
 
 ```{r message=FALSE}
 library(dplyr)
+# install.packages("tidyverse")
+library(tidyverse)
+library(magrittr)
 ```
 
 ```{r}
@@ -21,3 +24,23 @@ wide_form <- read.csv("wide.form.csv")
 wide_form %>%
   slice(1:10)
 ```
+
+```{r}
+wide_form %<>% 
+  mutate(Subject=as.factor(Subject))
+```
+
+```{r}
+wide_form %>%
+  select(Subject, AB_I_O, AB_I_DO, CD_I_O, CD_I_DO) %>%
+  group_by(Subject) %>%
+  summarise(Mean_AB_O=mean(AB_I_O),
+            Mean_AB_DO=mean(AB_I_DO),
+            Mean_CD_O=mean(CD_I_O),
+            Mean_CD_DO=mean(CD_I_DO)
+            )
+```
+
+sdkls
+
+
