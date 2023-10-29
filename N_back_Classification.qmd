@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-## Data Manipulation 
+## Data Manipulation
 
 The data set used in this study is retrieved from the website of [Tufts HCI Lab](https://tufts-hci-lab.github.io/code_and_datasets/fNIRS2MW.html).
 
